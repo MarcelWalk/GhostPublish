@@ -10,14 +10,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:ghostpublish.helloWorld"
+		"onCommand:ghostpublish.ghostPublish"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "ghostpublish.helloWorld",
-				"title": "Hello World"
+				"command": "ghostpublish.ghostPublish",
+				"title": "Ghost Publish"
 			}
 		],
 		"configuration": {
