@@ -1,5 +1,6 @@
 {
 	"name": "ghostpublish",
+	"publisher": "nyasaki",
 	"displayName": "GhostPublish",
 	"description": "Publishes markdown files to Ghost",
 	"version": "0.0.1",
