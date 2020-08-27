@@ -36,7 +36,7 @@ function activate(context) {
 			key: admin_key
 		});
 
-		
+
 
 		// Get the active text editor
 		const editor = vscode.window.activeTextEditor;
@@ -49,17 +49,30 @@ function activate(context) {
 
 			// Convert to HTML because ghost doesnt support MD
 			let converter = new showdown.Converter();
-      		let html = converter.makeHtml(word);
+			let html = converter.makeHtml(word);
 
-			  //Create post
-			api.posts.add({
-				title: filepath.substring(0,filepath.lastIndexOf('.')), html				
-			},
-			{source: 'html'}).then(res => console.log(JSON.stringify(res)))
-				.catch(err => console.log(err));
+			if (filepath.substring(filepath.lastIndexOf('.')+1, filepath.length) == "md") {
+				//Create post
+				api.posts.add({
+						title: filepath.substring(0, filepath.lastIndexOf('.')),
+						html
+					}, {
+						source: 'html'
+					}).then(() => {
+						// Display a sucess message
+						vscode.window.showInformationMessage("Post created on " + api_url);
+					})
+					.catch(err => {
+						// Display a error message
+						vscode.window.showInformationMessage("Post creation failed\n" + err);
+					});
+			}else{
+				vscode.window.showInformationMessage("Please use a markdown file");
+			}
 
-			// Display a message box to the user
-			vscode.window.showInformationMessage("Post created");
+
+
+
 		}
 
 
