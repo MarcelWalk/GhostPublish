@@ -21,13 +21,9 @@ function activate(context) {
 	let disposable = vscode.commands.registerCommand('ghostpublish.ghostPublish', function () {
 		// The code you place here will be executed every time your command is executed
 
-		let api_url = vscode.workspace.getConfiguration('ghostpublish').get("apiUrl")
-		let admin_key = vscode.workspace.getConfiguration('ghostpublish').get("adminKey")
+		let api_url = vscode.workspace.getConfiguration('ghostpublish').get("apiUrl");
+		let admin_key = vscode.workspace.getConfiguration('ghostpublish').get("adminKey");
 		let filepath = vscode.window.activeTextEditor.document.fileName.replace(/^.*[\\\/]/, '');
-
-		//Messages for debugging
-		//vscode.window.showInformationMessage("API: " + api_url);
-		//vscode.window.showInformationMessage("KEY: " + admin_key);
 
 		// Your API config
 		const api = new GhostAdminAPI({
@@ -35,8 +31,6 @@ function activate(context) {
 			version: "v3",
 			key: admin_key
 		});
-
-
 
 		// Get the active text editor
 		const editor = vscode.window.activeTextEditor;
@@ -51,13 +45,13 @@ function activate(context) {
 			let converter = new showdown.Converter();
 			let html = converter.makeHtml(word);
 
-			if (filepath.substring(filepath.lastIndexOf('.')+1, filepath.length) == "md") {
+			if (filepath.substring(filepath.lastIndexOf(".")+1, filepath.length) == "md") {
 				//Create post
 				api.posts.add({
-						title: filepath.substring(0, filepath.lastIndexOf('.')),
+						title: filepath.substring(0, filepath.lastIndexOf(".")),
 						html
 					}, {
-						source: 'html'
+						source: "html"
 					}).then(() => {
 						// Display a sucess message
 						vscode.window.showInformationMessage("Post created on " + api_url);

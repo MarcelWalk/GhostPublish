@@ -3,6 +3,7 @@
 	"publisher": "nyasaki",
 	"displayName": "GhostPublish",
 	"description": "Publishes markdown files to Ghost",
+	"icon": "images/icon.png",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.48.0"
@@ -15,12 +16,10 @@
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands": [
-			{
-				"command": "ghostpublish.ghostPublish",
-				"title": "Ghost Publish"
-			}
-		],
+		"commands": [{
+			"command": "ghostpublish.ghostPublish",
+			"title": "Ghost Publish"
+		}],
 		"configuration": {
 			"title": "Ghost Publish",
 			"properties": {
