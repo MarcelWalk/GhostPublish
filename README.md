@@ -17,5 +17,8 @@ and publish it to your Ghost blog.
 Now you can go to your ghost admin interface and check the post,  
 and set it live directly or schedule it.
 
+## Download
+https://marketplace.visualstudio.com/items?itemName=Nyasaki.ghostpublish
+
 ## Support Me!
 Buy me a [coffee](https://ko-fi.com/nyasaki)
