@@ -2,7 +2,7 @@
 
 ## Features
 
-Do you like the ghost editor?, No?  
+Do you like the [ghost](https://ghost.org/) editor?, No?  
 Then this extension for VS-Code is just right for you!  
 It gives you the ablility to write markdown code in VS-Code,  
 and publish it to your Ghost blog.
