@@ -2,4 +2,7 @@
 
 ## Features
 
-Publish posts via VSCOde
+Publish posts via VSCode
+
+## Download
+https://marketplace.visualstudio.com/items?itemName=Nyasaki.ghostpublish
